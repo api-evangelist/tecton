@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tecton.ai/docs/cli
+name: tecton
+summary: >-
+  First-party command-line interface for Tecton, shipped inside the `tecton` Python SDK
+  package. It is the primary "feature-as-code" workflow tool: authenticate, plan/apply a
+  feature repository against a workspace, manage workspaces and access, and inspect
+  materialization. Installing the SDK (`pip install tecton`) puts the `tecton` binary on PATH.
+install:
+  - method: pip
+    command: pip install tecton
+    provides_binary: tecton
+docs: https://docs.tecton.ai/docs/cli
+command_groups:
+  - group: auth
+    commands: [login, logout, whoami]
+    purpose: Authenticate the CLI/SDK to a Tecton cluster (browser SSO) and inspect the current principal.
+  - group: feature repository
+    commands: [init, plan, apply, destroy, restore]
+    purpose: Declaratively plan and apply the local feature repo (FeatureViews, FeatureServices, Entities, DataSources) against a workspace.
+  - group: workspace
+    commands: [workspace list, workspace select, workspace create, workspace delete]
+    purpose: Manage Tecton workspaces (dev vs live/production containers for feature objects).
+  - group: access-control
+    commands: [access-control, service-account, api-key]
+    purpose: Manage service accounts, API keys, and role assignments for the RBAC model.
+  - group: operations
+    commands: [materialization-status, delete]
+    purpose: Inspect and manage feature materialization jobs.
+notes: >-
+  Command surface reflects Tecton's documented CLI reference; exact subcommand set varies
+  by framework version (docs are versioned 0.8 … 1.2). See the versioned CLI Reference.

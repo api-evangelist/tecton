@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: >-
+  Derived from Tecton's documented FeatureService HTTP API
+  (https://docs.tecton.ai/docs/reading-feature-data/reading-online-features-for-inference-using-the-http-api).
+  No official hosted Tecton MCP server was found at search time.
+server:
+  name: tecton
+  transport: http
+  url: null            # no published Tecton MCP server
+tools:
+  - name: get_features
+    description: Read a single online feature vector from a Feature Service for one entity key set.
+    source_operation: FeatureService HTTP API POST /api/v1/feature-service/get-features
+  - name: get_features_batch
+    description: Read multiple online feature vectors in a single batched request.
+    source_operation: FeatureService HTTP API POST /api/v1/feature-service/get-features-batch
+  - name: query_features
+    description: Read multiple feature vectors using wildcard join keys.
+    source_operation: FeatureService HTTP API POST /api/v1/feature-service/query-features
+  - name: get_feature_service_metadata
+    description: Retrieve the metadata (features, join keys, types) for a Feature Service.
+    source_operation: FeatureService HTTP API POST /api/v1/feature-service/metadata
+notes: >-
+  Candidate tool list only; endpoint paths reflect Tecton's documented online serving API
+  shape. Not an authoritative provider MCP manifest.

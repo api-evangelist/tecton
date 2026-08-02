@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: registry probes (PyPI, Maven Central) + https://docs.tecton.ai/docs/sdk-reference
+packages:
+  - language: python
+    registry: pypi
+    name: tecton
+    url: https://pypi.org/project/tecton/
+    install: pip install tecton
+    version: 1.2.13
+    official: true
+    description: Tecton Python SDK — define, apply, test and manage features; also ships the `tecton` CLI.
+  - language: python
+    registry: pypi
+    name: tecton-client
+    url: https://pypi.org/project/tecton-client/
+    install: pip install tecton-client
+    version: 0.4.0
+    official: true
+    source_code: https://github.com/tecton-ai/tecton-http-client-python
+    description: Open-source Python client wrapping the Tecton FeatureService HTTP API (online inference, batch requests, response deserialization).
+  - language: java
+    registry: maven
+    name: ai.tecton:java-client
+    url: https://central.sonatype.com/artifact/ai.tecton/java-client
+    install: "implementation 'ai.tecton:java-client:0.9.2'"
+    version: 0.9.2
+    official: true
+    description: Open-source Java client library wrapping the Tecton HTTP API (request retries, response deserialization).
+  - language: java
+    registry: maven
+    name: ai.tecton:http-client
+    url: https://central.sonatype.com/artifact/ai.tecton/http-client
+    install: "implementation 'ai.tecton:http-client:1.0.0b1'"
+    version: 1.0.0b1
+    official: true
+    description: Tecton HTTP client (Java) for the FeatureService API.

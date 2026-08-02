@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://docs.tecton.ai/docs/security
+url: https://docs.tecton.ai/docs/security
+certifications:
+- SOC 2
+- ISO 27001
+- GDPR
+evidence:
+- source: https://docs.tecton.ai/docs/security
+  keywords:
+  - soc 2
+  - iso 27001
+  - gdpr

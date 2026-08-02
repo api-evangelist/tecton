@@ -1,0 +1,58 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tecton.ai/docs/introduction
+note: >-
+  Derived from Tecton's documented object model (Concepts). Tecton has no public OpenAPI
+  spec, so relationships are grounded in the framework's canonical entities rather than a
+  machine-readable schema. Entities are the objects a user declares in a feature repository
+  and manages via the SDK/CLI.
+entities:
+  - name: Workspace
+    description: Top-level container for feature objects; separates development from live/production.
+  - name: DataSource
+    description: Raw data input (Batch, Stream, or Push) that feeds feature transformations.
+  - name: Entity
+    description: Business object a feature describes; defines the join keys features are keyed on.
+  - name: Transformation
+    description: Reusable transformation logic applied to data sources to compute features.
+  - name: FeatureView
+    description: >-
+      Definition of one or more features (Batch, Stream, or Realtime), including the
+      transformation, source data, and the entity it is keyed on. Produces feature values.
+  - name: FeatureService
+    description: >-
+      A named group of features (from one or more FeatureViews) assembled for a specific
+      model; the unit that is served online via the HTTP API and used to build training data.
+  - name: Feature
+    description: An individual measurable property produced by a FeatureView.
+relationships:
+  - from: Workspace
+    type: has_many
+    to: FeatureView
+  - from: Workspace
+    type: has_many
+    to: FeatureService
+  - from: Workspace
+    type: has_many
+    to: Entity
+  - from: Workspace
+    type: has_many
+    to: DataSource
+  - from: FeatureService
+    type: has_many
+    to: FeatureView
+    via: features
+  - from: FeatureView
+    type: belongs_to
+    to: Entity
+    via: entities
+  - from: FeatureView
+    type: belongs_to
+    to: DataSource
+    via: source
+  - from: FeatureView
+    type: has_many
+    to: Feature
+  - from: FeatureView
+    type: uses
+    to: Transformation

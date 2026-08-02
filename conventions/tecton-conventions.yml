@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tecton.ai/docs/reading-feature-data/reading-online-features-for-inference-using-the-http-api
+summary: >-
+  Cross-cutting request/response semantics for the Tecton FeatureService HTTP API and
+  the Python/Java client libraries and CLI/SDK. Tecton exposes a low-latency online
+  serving API for reading feature vectors, plus a declarative SDK/CLI ("feature-as-code")
+  for defining and applying features.
+authentication:
+  style: api-key
+  header: "Authorization: Tecton-key <API_KEY>"
+  detail: See authentication/tecton-authentication.yml
+versioning:
+  api: uri-path            # HTTP API served under /api/v1/
+  current_api: v1
+  sdk: semver              # Python SDK / feature framework versioned (…0.8, 0.9, 1.0, 1.1, 1.2)
+  current_sdk: '1.2'
+  docs_are_versioned: true # docs.tecton.ai carries per-version doc trees (0.3 … 1.2 + beta)
+serialization:
+  request: application/json
+  response: application/json
+batching:
+  supported: true
+  detail: >-
+    The HTTP API and the Python/Java clients support reading multiple feature vectors in a
+    single request (get-features-batch), and wildcard reads that return multiple vectors.
+idempotency:
+  supported: false
+  detail: >-
+    Online feature reads are inherently read-only (idempotent by nature); Tecton does not
+    document a client-supplied Idempotency-Key contract for write/apply operations.
+error_handling:
+  style: http-status
+  detail: >-
+    Errors surface via standard HTTP status codes (e.g. 400 invalid request, 401/403 auth,
+    404 unknown feature service, 429 rate limited, 5xx server) with a JSON error body.
+rate_limiting:
+  detail: >-
+    Online serving is provisioned per Feature Server Group with latency budgets; throughput
+    limits depend on the customer's serving configuration rather than a fixed public quota.
+hosting:
+  model: single-tenant clusters
+  base_url_shape: "https://<customer-cluster>.tecton.ai"
+  detail: >-
+    Each Tecton deployment is a customer-specific cluster; the HTTP API base host is the
+    customer's own Tecton cluster domain (there is no single shared public API host).
+cross_links:
+  authentication: authentication/tecton-authentication.yml
+  lifecycle: lifecycle/tecton-lifecycle.yml
+  data_model: data-model/tecton-data-model.yml

@@ -1,8 +1,26 @@
 aid: tecton
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tecton.png
 name: Tecton
-description: Tecton is a company surfaced as a portfolio company of a16z, lux-capital, sv-angel and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Tecton is the enterprise feature platform (feature store) for real-time machine learning
+  and AI at scale. It transforms raw batch, streaming, and real-time data into ML-ready
+  features and embeddings, orchestrates the pipelines that materialize them, and serves them
+  to models online with low latency and ~100ms freshness while guaranteeing training/serving
+  consistency. Developers define features as code with the Python SDK and `tecton` CLI, then
+  read them for inference through the FeatureService HTTP API and open-source Python and Java
+  client libraries. Backed by Andreessen Horowitz, Lux Capital, and SV Angel.
 url: https://raw.githubusercontent.com/api-evangelist/tecton/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -14,10 +32,30 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Machine Learning
+- Feature Store
+- Feature Platform
+- MLOps
+- Artificial Intelligence
+- Real-Time Data
+- SDK
+apis:
+- name: Tecton FeatureService HTTP API
+  description: >-
+    Low-latency online feature serving for model inference — read single or batched feature
+    vectors, wildcard queries, and feature-service metadata. Authenticated with an
+    Authorization Tecton-key header bound to a Service Account. Served from customer-specific
+    cluster domains (https://<customer-cluster>.tecton.ai/api/v1/...).
+  humanURL: https://docs.tecton.ai/docs/reading-feature-data/reading-online-features-for-inference-using-the-http-api
+  baseURL: https://docs.tecton.ai
+  properties:
+  - type: Documentation
+    url: https://docs.tecton.ai/docs/reading-feature-data/reading-online-features-for-inference-using-the-http-api
+  - type: Authentication
+    url: authentication/tecton-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +64,48 @@ maintainers:
 common:
 - type: Website
   url: https://www.tecton.ai
+- type: DeveloperPortal
+  url: https://docs.tecton.ai
+- type: Documentation
+  url: https://docs.tecton.ai
+- type: APIReference
+  url: https://docs.tecton.ai/docs/reading-feature-data/reading-online-features-for-inference-using-the-http-api
+- type: GettingStarted
+  url: https://docs.tecton.ai/docs/tutorials/tecton-quick-start
+- type: GitHubOrganization
+  url: https://github.com/tecton-ai
+- type: StatusPage
+  url: https://tecton.statuspage.io
+- type: Compliance
+  url: https://docs.tecton.ai/docs/security
+- type: TrustCenter
+  url: security/tecton-trust-center.yml
+- type: DomainSecurity
+  url: security/tecton-domain-security.yml
+- type: Authentication
+  url: authentication/tecton-authentication.yml
+- type: Packages
+  url: packages/tecton-packages.yml
+- type: SDKs
+  url: packages/tecton-packages.yml
+- type: CLI
+  url: cli/tecton-cli.yml
+- type: Conventions
+  url: conventions/tecton-conventions.yml
+- type: Conformance
+  url: conformance/tecton-conformance.yml
+- type: Lifecycle
+  url: lifecycle/tecton-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/tecton-lifecycle.yml
+- type: DataModel
+  url: data-model/tecton-data-model.yml
+- type: MCPServer
+  url: mcp/tecton-mcp.yml
+- type: LLMsTxt
+  url: llms/tecton-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1

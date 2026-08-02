@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tecton.ai/docs
+versioning:
+  api:
+    scheme: uri-path
+    current: v1
+  framework:
+    scheme: semver
+    current: '1.2'
+    supported_doc_versions: ['0.8', '0.9', '1.0', '1.1', '1.2', 'beta']
+    archived_doc_versions: ['0.3', '0.4', '0.5', '0.6', '0.7']
+    docs: https://docs.tecton.ai/docs/introduction
+releases:
+  docs: https://docs.tecton.ai/docs
+  notes: >-
+    Tecton publishes a "Releases & Upgrades" section (FOR ADMINISTRATORS) covering
+    SDK/framework release notes and upgrade guidance between framework versions.
+status_page: https://tecton.statuspage.io
+sla:
+  detail: >-
+    Online serving carries per-deployment latency budgets and availability commitments
+    governed by enterprise agreements; no public SLA document was found.
+deprecation:
+  policy: >-
+    Framework versions move through supported → archived; older doc trees (0.3–0.7) are
+    marked archived. Version-to-version upgrade guides document breaking changes.
+  docs: https://docs.tecton.ai/docs

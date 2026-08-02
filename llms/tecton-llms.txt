@@ -1,0 +1,37 @@
+# Tecton
+
+> Tecton is the feature platform (feature store) for real-time machine learning at scale. It transforms raw data into ML-ready features and embeddings and serves them to models with low latency and ~100ms freshness, guaranteeing training/serving consistency. Backed by a16z, Lux Capital, and SV Angel.
+
+## Overview
+- Company website: https://www.tecton.ai
+- Documentation: https://docs.tecton.ai
+- Status: https://tecton.statuspage.io
+- GitHub: https://github.com/tecton-ai
+- Certifications: SOC 2, ISO 27001, GDPR (https://docs.tecton.ai/docs/security)
+
+## APIs
+- FeatureService HTTP API — low-latency online feature serving for model inference (single and batch feature-vector reads, wildcard queries, and feature-service metadata). Authenticated with `Authorization: Tecton-key <API_KEY>`, keys bound to Service Accounts. Served from customer-specific cluster domains (`https://<customer-cluster>.tecton.ai/api/v1/...`). Docs: https://docs.tecton.ai/docs/reading-feature-data/reading-online-features-for-inference-using-the-http-api
+
+## SDKs & Clients
+- Python SDK (feature-as-code + CLI): https://pypi.org/project/tecton/ (`pip install tecton`)
+- Python HTTP client: https://pypi.org/project/tecton-client/ (source: https://github.com/tecton-ai/tecton-http-client-python)
+- Java client: ai.tecton:java-client (Maven Central)
+- Java HTTP client: ai.tecton:http-client (Maven Central)
+
+## CLI
+- `tecton` CLI (ships with the Python SDK): login, init, plan, apply, workspace, service-account, api-key, materialization-status. Docs: https://docs.tecton.ai/docs/cli
+
+## Concepts / Data model
+- Workspace, DataSource (Batch/Stream/Push), Entity, Transformation, FeatureView (Batch/Stream/Realtime), FeatureService, Feature. Docs: https://docs.tecton.ai/docs/introduction
+
+## Repo artifacts
+- Authentication: authentication/tecton-authentication.yml
+- Conventions: conventions/tecton-conventions.yml
+- Packages/SDKs: packages/tecton-packages.yml
+- CLI: cli/tecton-cli.yml
+- Data model: data-model/tecton-data-model.yml
+- Lifecycle: lifecycle/tecton-lifecycle.yml
+- Conformance/Compliance: conformance/tecton-conformance.yml
+- Domain security: security/tecton-domain-security.yml
+- Trust center: security/tecton-trust-center.yml
+- MCP (candidate): mcp/tecton-mcp.yml

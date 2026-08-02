@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of Tecton public hosts
+hosts:
+  - host: https://www.tecton.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+  - host: https://docs.tecton.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+summary: >-
+  No /.well-known/ discovery documents are published on Tecton's marketing or docs hosts.
+  The FeatureService HTTP API is served from customer-specific cluster domains
+  (https://<customer-cluster>.tecton.ai), not probed here. Absence is a valid result.
