@@ -48,7 +48,7 @@ created: '2026-07-17'
 modified: '2026-07-21'
 tags:
 - Company
-- Machine-Learning
+- Machine Learning
 - Feature Store
 - Feature Platform
 - MLOps
@@ -64,6 +64,7 @@ tags_raw:
 - Artificial Intelligence
 - Real-Time Data
 - SDK
+- Machine-Learning
 apis:
 - name: Tecton FeatureService HTTP API
   description: >-
