@@ -85,8 +85,6 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Plans
-  url: plans/tecton-plans-pricing.yml
 - type: Website
   url: https://www.tecton.ai
 - type: DeveloperPortal
